@@ -19,8 +19,7 @@ from utils.ml_utils import (
     preprocess_features
 )
 
-st.title(":material/psychology: ML Demo")
-st.markdown("Interactive machine learning demonstration with a simple classifier")
+st.markdown("Interactive machine learning demonstration with a simple classifier (Random Forest, limited to 20 features)")
 
 # ============================================================================
 # TABS FOR DIFFERENT ML WORKFLOWS
@@ -35,7 +34,7 @@ tab1, tab2, tab3 = st.tabs([
 # TAB 1: TRAIN MODEL
 # ============================================================================
 with tab1:
-    st.header("Train a Simple Classifier")
+    st.header("Train a Simple Classifier - Random Forest (max 20 features)")
     
     col1, col2 = st.columns([1, 1])
     
