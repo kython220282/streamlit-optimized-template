@@ -45,7 +45,14 @@ cd streamlit-optimized-template
 ```bash
 # Using uv (recommended)
 uv venv
-sour3. Run the app
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+uv pip install streamlit pandas numpy
+
+# Or using pip
+pip install streamlit pandas numpy
+```
+
+### 3. Run the app
 
 ```bash
 streamlit run streamlit_app.py
@@ -54,14 +61,7 @@ streamlit run streamlit_app.py
 uv run streamlit run streamlit_app.py
 ```
 
-### 4sh
-streamlit run streamlit_app.py
-
-# Or with uv
-uv run streamlit run streamlit_app.py
-```
-
-### 3. Open your browser
+### 4. Open your browser
 
 Navigate to `http://localhost:8501`
 
@@ -267,19 +267,57 @@ RUN pip install streamlit pandas numpy
 
 EXPOSE 8501
 
-CMDGitHub Repository](https://github.com/kython220282/streamlit-optimized-template)
+CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+```
+
+## Secrets Management
+
+Store sensitive data in `.streamlit/secrets.toml`:
+
+```toml
+# .streamlit/secrets.toml
+[database]
+host = "your-db-host"
+username = "your-username"
+password = "your-password"
+
+[api]
+api_key = "your-api-key"
+```
+
+Access in your app:
+```python
+import streamlit as st
+
+db_host = st.secrets["database"]["host"]
+api_key = st.secrets["api"]["api_key"]
+```
+
+⚠️ **Important:** Add `.streamlit/secrets.toml` to your `.gitignore`!
+
+## Production Checklist
+
+Before deploying to production:
+
+- [ ] Set reasonable TTL on all caches (avoid stale data)
+- [ ] Test with production-scale data volumes
+- [ ] Configure secrets properly in deployment platform
+- [ ] Add error handling for data loading failures
+- [ ] Remove debug/development code
+- [ ] Test all pages and navigation flows
+- [ ] Verify responsive layout on different screen sizes
+- [ ] Set up monitoring/logging if needed
+## Resources
+
+- [GitHub Repository](https://github.com/kython220282/streamlit-optimized-template)
 - [Streamlit Documentation](https://docs.streamlit.io)
 - [Streamlit Gallery](https://streamlit.io/gallery)
 - [Streamlit Forum](https://discuss.streamlit.io)
+- [Performance Tips](https://docs.streamlit.io/develop/concepts/architecture/caching)
 
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request to the [GitHub repository](https://github.com/kython220282/streamlit-optimized-template).
-## Resources
-
-- [Streamlit Documentation](https://docs.streamlit.io)
-- [Streamlit Gallery](https://streamlit.io/gallery)
-- [Streamlit Forum](https://discuss.streamlit.io)
 
 ## License
 
