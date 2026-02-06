@@ -1,0 +1,125 @@
+# Streamlit Configuration
+# =======================
+# This file configures your app's theme, behavior, and appearance.
+# Changes take effect after saving and rerunning the app.
+# Font changes require a server restart.
+
+# ============================================================================
+# THEME CONFIGURATION
+# ============================================================================
+[theme]
+# Base theme to inherit from
+base = "light"
+
+# Primary color for buttons, links, and active elements
+# Must contrast well with white text (used on primary buttons)
+primaryColor = "#0969da"
+
+# Main content background
+backgroundColor = "#ffffff"
+
+# Widget backgrounds, code blocks, secondary containers
+secondaryBackgroundColor = "#f6f8fa"
+
+# Body text color
+textColor = "#1F2328"
+
+# Border color for widgets and containers
+borderColor = "#d0d7de"
+
+# Link color in markdown
+linkColor = "#0969da"
+
+# Code block styling
+codeBackgroundColor = "#f6f8fa"
+codeTextColor = "#1F2328"
+
+# Font configuration
+font = "sans-serif"  # or use Google Fonts: "'Inter':https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+baseFontSize = 14
+baseFontWeight = 400
+
+# Border and spacing
+baseRadius = "8px"
+buttonRadius = "8px"
+showWidgetBorder = true
+showSidebarBorder = true
+
+# Remove underlines from links for cleaner look
+linkUnderline = false
+
+# Chart colors (categorical data like bar charts, pie slices)
+chartCategoricalColors = ["#0969da", "#1a7f37", "#bf3989", "#8250df", "#cf222e", "#bf8700", "#57606a"]
+
+# Semantic colors for status indicators and badges
+blueColor = "#0969da"
+greenColor = "#1a7f37"
+yellowColor = "#dbab09"
+orangeColor = "#bf8700"
+redColor = "#cf222e"
+violetColor = "#8250df"
+grayColor = "#57606a"
+
+# Dataframe styling
+dataframeBorderColor = "#d0d7de"
+dataframeHeaderBackgroundColor = "#f6f8fa"
+
+# Sidebar customization (optional - defaults to main theme if not specified)
+[theme.sidebar]
+backgroundColor = "#f6f8fa"
+secondaryBackgroundColor = "#eaeef2"
+borderColor = "#d0d7de"
+
+# ============================================================================
+# DARK MODE (optional)
+# ============================================================================
+# Uncomment to enable dark mode toggle in app settings
+# Users can switch between light and dark modes
+
+# [theme.dark]
+# primaryColor = "#58a6ff"
+# backgroundColor = "#0d1117"
+# secondaryBackgroundColor = "#161b22"
+# textColor = "#e6edf3"
+# linkColor = "#58a6ff"
+# borderColor = "#30363d"
+# codeBackgroundColor = "#161b22"
+# codeTextColor = "#e6edf3"
+# 
+# [theme.dark.sidebar]
+# backgroundColor = "#010409"
+# secondaryBackgroundColor = "#0d1117"
+# borderColor = "#30363d"
+
+# ============================================================================
+# SERVER CONFIGURATION
+# ============================================================================
+[server]
+# Port to run the app on (default: 8501)
+# port = 8501
+
+# Whether to enable CORS (for embedding or API access)
+# enableCORS = false
+
+# Whether to enable XSRF protection
+# enableXsrfProtection = true
+
+# Max upload size in MB
+maxUploadSize = 200
+
+# ============================================================================
+# CLIENT CONFIGURATION
+# ============================================================================
+[client]
+# Show detailed error messages (disable in production for security)
+showErrorDetails = true
+
+# Toolbar mode: "auto", "developer", "viewer", "minimal"
+toolbarMode = "auto"
+
+# ============================================================================
+# BROWSER CONFIGURATION
+# ============================================================================
+[browser]
+# Automatically open browser on start
+gatherUsageStats = false
