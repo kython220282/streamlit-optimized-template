@@ -53,6 +53,10 @@ page = st.navigation(
             st.Page("app_pages/dashboard.py", title="Dashboard", icon=":material/dashboard:"),
             # Add more analytics pages here
         ],
+        "Machine Learning": [
+            st.Page("app_pages/ml_demo.py", title="ML Demo", icon=":material/psychology:"),
+            # Add more ML pages here (e.g., model training, evaluation)
+        ],
         "Settings": [
             st.Page("app_pages/settings.py", title="Configuration", icon=":material/settings:"),
             # Add more settings pages here
